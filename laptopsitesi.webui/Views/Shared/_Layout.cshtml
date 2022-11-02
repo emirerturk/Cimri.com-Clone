@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<body>
+    @await Html.PartialAsync("_navbar")
+    <partial name="_header">
+
+        <main class="mb-3">
+            <div class="container">
+
+                @if (IsSectionDefined("Categories"))
+                {
+                    <div class="row">
+                        <div class="col-md-3">
+                            @RenderSection("Categories",false)
+                        </div>
+                        <div class="col-md-9">
+                            @RenderBody()
+
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderBody()
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </main>
+
+        <footer class="py-5 bg-dark text-white text-center">
+            Emir Ertürk | 2022
+        </footer>
+
+</body>
+
+</html>

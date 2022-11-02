@@ -1,0 +1,137 @@
+@model List<Category>
+
+@{
+    var thing = "something";
+}
+<div class="list-group">
+    <form action="/product/list">
+        <input name="artanfiyat" class="btn btn-outline-danger" style="width:250px" type="submit"
+            value="Artan Fiyata Göre Sırala">
+    </form>
+    <form action="/product/list">
+        <input name="azalanfiyat" class="btn btn-outline-danger" style="width:250px" type="submit"
+            value="Azalan Fiyata Göre Sırala">
+    </form>
+    <form action="/product/list">
+        <input name="puan" class="btn btn-outline-danger" style="width:250px" type="submit"
+            value="En Yüksek Puana Göre Sırala">
+    </form>
+    @foreach (var category in Model)
+    {
+
+        if (@category.Name == thing)
+        {
+        }
+        else
+        {
+
+            <div class="w3-panel w3-border-left w3-border-blue">
+                <strong>@category.Name</strong>
+            </div>
+            thing = @category.Name;
+            foreach (var feature in Model)
+            {
+                if (@category.Name == feature.Name && @category.Name == "EkranBoyutu")
+                {
+
+                    <form action="/product/list">
+                        <input name="ekranboyut" style="width:250px" class="btn btn-outline-primary" type="submit"
+            value="@feature.Features">
+                    </form>
+
+
+                }
+            }
+            foreach (var feature in Model)
+            {
+                if (@category.Name == feature.Name && @category.Name == "DiskTuru")
+                {
+
+                    <form action="/product/list">
+                        <input name="diskturu" class="btn btn-outline-primary" style="width:250px" type="submit"
+            value="@feature.Features">
+                    </form>
+
+
+                }
+            }
+            foreach (var feature in Model)
+            {
+                if (@category.Name == feature.Name && @category.Name == "IsletimSistemi")
+                {
+
+                    <form action="/product/list">
+                        <input name="isletimsistemi" class="btn btn-outline-primary" style="width:250px" type="submit"
+            value="@feature.Features">
+                    </form>
+
+
+                }
+            }
+            foreach (var feature in Model)
+            {
+                if (@category.Name == feature.Name && @category.Name == "BellekKapasitesi")
+                {
+
+                    <form action="/product/list">
+                        <input name="bellekkapasitesi" class="btn btn-outline-primary" style="width:250px" type="submit"
+            value="@feature.Features">
+                    </form>
+
+
+                }
+            }
+            foreach (var feature in Model)
+            {
+                if (@category.Name == feature.Name && @category.Name == "IslemciModeli")
+                {
+
+                    <form action="/product/list">
+                        <input name="islemcimodel" class="btn btn-outline-primary" style="width:250px" type="submit"
+            value="@feature.Features">
+                    </form>
+
+
+                }
+            }
+            foreach (var feature in Model)
+            {
+                if (@category.Name == feature.Name && @category.Name == "DiskKapasitesi")
+                {
+
+                    <form action="/product/list">
+                        <input name="diskkapasite" class="btn btn-outline-primary" style="width:250px" type="submit"
+            value="@feature.Features">
+                    </form>
+
+
+                }
+            }
+            foreach (var feature in Model)
+            {
+                if (@category.Name == feature.Name && @category.Name == "Marka")
+                {
+
+                    <form action="/product/list">
+                        <input name="marka" class="btn btn-outline-primary" type="submit" style="width:250px" value="@feature.Features">
+                    </form>
+
+
+                }
+            }
+            foreach (var feature in Model)
+            {
+                if (@category.Name == feature.Name && @category.Name == "EkranKarti")
+                {
+
+                    <form action="/product/list">
+                        <input name="ekrankarti" class="btn btn-outline-primary" type="submit" style="width:250px"
+            value="@feature.Features">
+                    </form>
+
+
+                }
+            }
+        }
+    }
+</div>

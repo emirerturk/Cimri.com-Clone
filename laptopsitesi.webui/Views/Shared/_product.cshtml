@@ -1,0 +1,35 @@
+@model Product
+
+<div class="card mb-2">
+    <img class="card-img-top" src="~/img/laptop.png" alt="" width="15" height="250">
+
+    <div class="card-body">
+        <a asp-controller="Product" asp-action="Details" asp-route-id="@Model.laptopid">@Model.Baslik</a>
+        @* <h5 class="card-title">@Model.Baslik</h5> *@
+        @* <p class="card-text">@Model.Fiyat TL</p>
+            <p class="card-text">Puanı : @Model.Puan </p> *@
+
+        <hr>
+        <p class="card-text">Puanı : @Model.Puan </p>
+        <a href="@Model.NLink">
+            <img src="~/img/n11.png" width="50" height="35" />
+        </a>
+        <p class="card-text">Fiyatı : @Model.NFiyat </p>
+
+        <a href="@Model.HLink">
+            <img src="~/img/hepsiburada.jpg" width="50" height="35" />
+        </a>
+        <p class="card-text">Fiyatı : @Model.HFiyat </p>
+
+        <a href="@Model.TeLink">
+            <img src="~/img/teknosa.png" width="50" height="35" />
+        </a>
+        <p class="card-text">Fiyatı : @Model.TeFiyat </p>
+
+        <a href="@Model.TrLink">
+            <img src="~/img/trendyol.jpg" width="50" height="35" />
+        </a>
+        <p class="card-text">Fiyatı : @Model.TrFiyat </p>
+
+    </div>
+</div>
